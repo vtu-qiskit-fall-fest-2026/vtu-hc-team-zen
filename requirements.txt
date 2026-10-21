@@ -1,14 +1,15 @@
-# Core quantum SDK
+# Core quantum SDK & Local simulator
 qiskit>=1.0,<2.0
 qiskit-ibm-runtime>=0.30
-
-# Local simulator
 qiskit-aer>=0.15
 
-# Optional add-ons -- remove the ones you do not use
+# Quantum Machine Learning
+qiskit-machine-learning>=0.7.2
 qiskit-algorithms>=0.3
-qiskit-optimization>=0.6
-qiskit-nature>=0.7
+
+# Deep Learning (PyTorch)
+torch
+torchvision
 
 # Numerics, data and plotting
 numpy>=1.26
