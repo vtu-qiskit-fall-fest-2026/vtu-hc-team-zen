@@ -11,6 +11,9 @@ qiskit-algorithms>=0.3
 torch
 torchvision
 
+# Frontend UI Dashboard
+streamlit>=1.30.0
+
 # Numerics, data and plotting
 numpy>=1.26
 scipy>=1.11
