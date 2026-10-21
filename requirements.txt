@@ -21,5 +21,8 @@ pandas>=2.1
 matplotlib>=3.8
 scikit-learn>=1.4
 
+# Web Application & Dashboard
+streamlit>=1.40
+
 # Testing
 pytest>=8.0

@@ -131,11 +131,17 @@ flowchart LR
 vtu-hc-team-zen/
 ├── README.md              # This file
 ├── requirements.txt       # Python dependencies
+├── app.py                 # Streamlit dashboard application
+├── hybrid_unet_model.pth  # Trained model weights
+├── data/
+│   ├── images/            # Satellite imagery (.jpg, .png)
+│   └── masks/             # Ground-truth road masks
 ├── src/
 │   ├── __init__.py
 │   ├── circuit.py         # Quantum circuit construction
-│   ├── optimizer.py       # Optimization loop
-│   └── main.py            # Entry point
+│   ├── dataset.py         # Satellite road dataset loader
+│   ├── optimizer.py       # Optimization loop & training pipeline
+│   └── main.py            # Hybrid U-Net model & entry point
 
 
 ---
