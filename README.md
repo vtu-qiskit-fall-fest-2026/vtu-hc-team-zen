@@ -46,9 +46,9 @@
 
 | # | Name | GitHub Username | Role |
 | :-- | :--- | :--- | :--- |
-| 1 | _Add your name_ | _your-github-username_ | _Team Lead_ |
-| 2 | _Add your name_ | _your-github-username_ | _Developer_ |
-| 3 | _Add your name_ | _your-github-username_ | _Developer_ |
+| 1 | _Channaveer_ | _Channaveer06_ | _Team Lead_ |
+| 2 | _Mallikarjun_ | _mallugze_ | _Developer_ |
+| 3 | _Akhilesh_ | _akhilesh488-byte_ | _Developer_ |
 
 <!--
 Optional: add a plain list instead of the table above.
@@ -66,11 +66,11 @@ who experiences it, and why does it matter. Link to the official problem
 statement from the brief if one applies.
 -->
 
-**Problem:** _Describe the problem in 2–3 sentences._
+**Problem:** _High-resolution satellite imagery segmentation for road network extraction demands massive computational overhead, creating severe parameter bottlenecks in classical deep learning models._
 
-**Why it matters:** _Explain the impact or opportunity._
+**Why it matters:** _These bottlenecks limit real-time processing capabilities for Earth observation and restrict the scalability of models on standard GPU hardware._
 
-**Track / Category:** _Online / Offline · Track 1 / Track 2 · <domain>_
+**Track / Category:** _Online · Track 4 · <Quantum + AI & ML>_
 
 ---
 
@@ -81,11 +81,11 @@ Describe your solution. Keep it concrete: the core idea, the user flow, and
 the quantum/ML technique you are applying.
 -->
 
-**Solution:** _In 2–3 sentences, describe what you built._
+**Solution:** _We are developing a Hybrid Quantum-Classical deep learning architecture by embedding Variational Quantum Circuits (VQCs) into the bottleneck layer of a classical Dual-Attention U-Net. Built using Qiskit and PyTorch, this system replaces heavily parameterized classical layers with quantum layers to process complex satellite imagery.._
 
-**Key idea:** _The one-line technical summary of your approach._
+**Key idea:** _Mapping spatial features into high-dimensional quantum states to drastically reduce parameter dimensionality and accelerate feature extraction._
 
-**Why this works:** _How your approach addresses the problem statement._
+**Why this works:** _By offloading the most resource-intensive spatial processing to quantum circuits, the model leverages quantum properties to bypass classical GPU memory bottlenecks, achieving computational efficiency without sacrificing the high segmentation accuracy (Dice score) required for precise road extraction._
 
 ---
 
@@ -103,11 +103,11 @@ flowchart LR
     D --> E[Output]
 ```
 
-1. **Input** — _what data goes in and in what format_
-2. **Preprocessing** — _cleaning, feature extraction, encoding_
-3. **Quantum core** — _the circuit, ansatz, or algorithm used_
-4. **Post-processing** — _decoding, measurement, scoring_
-5. **Output** — _what the user finally gets_
+1. **Input** — _High-resolution satellite imagery (RGB/Multispectral) ingested as PyTorch tensor arrays (e.g., [batch, channels, height, width])_
+2. **Preprocessing** — _Classical U-Net encoder layers extract initial spatial features, followed by pooling and angle encoding to map the reduced classical data into quantum states_
+3. **Quantum core** — _A Qiskit-based Variational Quantum Circuit (VQC) using a parameterized ansatz (such as EfficientSU2 or RealAmplitudes) functioning as the U-Net bottleneck layer_
+4. **Post-processing** — _Quantum measurement expectation values are converted back into classical tensors and fed through the classical U-Net decoder (with dual-attention skip connections) to rebuild spatial resolution_
+5. **Output** — _A binary segmentation mask (2D matrix) predicting road network pixels, evaluated for accuracy using the Dice score_
 
 ---
 
@@ -116,34 +116,27 @@ flowchart LR
 | Layer | Technology |
 | :--- | :--- |
 | Language | Python 3.11+ |
-| Quantum SDK | Qiskit `>=1.0`, Qiskit Aer, Qiskit Runtime |
-| Optimisation | Qiskit Optimization / COBYLA / SPSA |
-| Simulation | AerSimulator (statevector / noisemodel) |
-| Environment | JupyterLab / VS Code, `venv` |
+| Deep Learning | PyTorch, Torchvision |
+| Quantum SDK | Qiskit `>=1.0`, Qiskit Machine Learning (TorchConnector), Qiskit Aer |
+| Optimisation | Adam (PyTorch) + COBYLA / SPSA (Qiskit) |
+| Simulation | AerSimulator (statevector) |
+|Evaluation Metrics | Scikit-learn, TorchMetrics (Dice score, IoU)|
+| Environment | JupyterLab / VS Code, venv|
 | Version control | Git + GitHub |
 
 ---
 
 ## 📁 Project Structure
 
-```text
 vtu-hc-team-zen/
 ├── README.md              # This file
 ├── requirements.txt       # Python dependencies
-├── pyproject.toml         # Project metadata (optional)
-├── .gitignore
-├── notebooks/             # Jupyter notebooks for experiments
-│   └── exploration.ipynb
 ├── src/
 │   ├── __init__.py
 │   ├── circuit.py         # Quantum circuit construction
 │   ├── optimizer.py       # Optimization loop
 │   └── main.py            # Entry point
-├── data/                  # Datasets (use Git LFS for large files)
-├── tests/                 # Unit tests
-│   └── test_circuit.py
-└── docs/                  # Notes, diagrams, reports
-```
+
 
 ---
 
