@@ -129,19 +129,19 @@ flowchart LR
 ## 📁 Project Structure
 
 vtu-hc-team-zen/
-├── README.md              # This file
+├── README.md              # Project documentation
 ├── requirements.txt       # Python dependencies
-├── app.py                 # Streamlit dashboard application
-├── hybrid_unet_model.pth  # Trained model weights
-├── data/
-│   ├── images/            # Satellite imagery (.jpg, .png)
-│   └── masks/             # Ground-truth road masks
+├── app.py                 # Streamlit frontend dashboard
 ├── src/
 │   ├── __init__.py
+│   ├── dataset.py         # Real dataset loader and image transforms
 │   ├── circuit.py         # Quantum circuit construction
-│   ├── dataset.py         # Satellite road dataset loader
-│   ├── optimizer.py       # Optimization loop & training pipeline
-│   └── main.py            # Hybrid U-Net model & entry point
+│   ├── optimizer.py       # Optimization loop and GPU training pipeline
+│   └── main.py            # Entry point
+└── data/
+    ├── images/            # Satellite image folder
+    └── masks/             # Binary mask folder
+
 
 
 ---
@@ -274,7 +274,8 @@ git pull --rebase       # update your branch on top of main
 - [ ] `requirements.txt` committed and project runs from a clean clone
 - [ ] Code pushed to `main` and the latest `main` builds successfully
 - [ ] Notebooks committed with **cleared outputs** (or use `nbstrip`)
-- [ ] `README` includes a demo screenshot / video link
+- [x] `README` includes a demo screenshot / video link: [Watch Prototype Demo](https://drive.google.com/file/d/1FDqH3B4nwA4oN1TbTivbK8Ycbf0VyqqJ/view?usp=drivesdk)
+
 - [ ] Short project summary submitted on the hackathon portal
 
 ---
