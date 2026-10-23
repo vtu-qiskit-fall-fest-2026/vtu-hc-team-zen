@@ -274,7 +274,7 @@ git pull --rebase       # update your branch on top of main
 - [x] `requirements.txt` committed and project runs from a clean clone
 - [x] Code pushed to `main` and the latest `main` builds successfully
 - [x] Notebooks committed with **cleared outputs** (or use `nbstrip`)
-- [x] `README` includes a demo screenshot / video link: [Watch Prototype Demo](https://drive.google.com/file/d/1FDqH3B4nwA4oN1TbTivbK8Ycbf0VyqqJ/view?usp=drivesdk)
+- [x] `README` includes a demo screenshot / video link: [Watch Prototype Demo](https://youtu.be/m1S8iygIWbk?si=yAhUr3WvJtQ_zGrz))
 
 - [x] Short project summary submitted on the hackathon portal
 
